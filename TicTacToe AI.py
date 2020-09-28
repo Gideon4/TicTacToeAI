@@ -1,5 +1,3 @@
-import random
-
 turn=-1
 start=False
 board=[[" " for i in range(3)] for j in range(3)]
