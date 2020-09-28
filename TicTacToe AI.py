@@ -1,5 +1,4 @@
 turn=-1
-start=False
 board=[[" " for i in range(3)] for j in range(3)]
 players=["X","O"]
 stillplaying=True
@@ -35,18 +34,16 @@ def AIturn():
                         return
                     tempboard[i][j]=" "
         player=players[(turn+1)%2]
-    
-    if turn==0:
-        start=True
-        board[0][0]=players[turn%2]
 
-    if start:
+    if turn%2==0:
         if turn==8:
             for i in range(3):
                 for j in range(3):
                     if board[i][j]==" ":
                         board[i][j]=players[turn%2]
                         break
+        elif turn==0:
+            board[0][0]=players[turn%2]
         elif turn==2:
             if board[1][1]==players[(turn+1)%2]:
                 board[1][2]=players[turn%2]
